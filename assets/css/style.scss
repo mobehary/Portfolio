@@ -1,0 +1,70 @@
+@import 'custom';
+
+body{
+    background-color: #E0E0E0;
+}
+
+.projects{
+    padding: 0px;
+    .project-card{
+        position: relative;
+        border: 1px solid #E0E0E0;
+        border-radius: 15px;
+        overflow: hidden;
+        transition: all 0.3s;
+        padding: 20px;
+        background-color: #FFF;
+        .project-image{
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            height: 200px;
+            transition: all 0.3s;
+        }
+        &:hover{
+            .project-image{
+                transform: scale(1.2);
+                // transform: rotate(-10deg);
+                transition: all 0.3s;
+            }
+        }
+    }
+    
+    .company{
+        position: absolute;
+        display: block;
+        top: 15px;
+        right: 15px;
+        .company-logo{
+            height: 50px;
+            width: 50px;
+            object-fit: contain;
+            background-color: #868686;
+            overflow: hidden;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center center;
+            border-radius: 50%;
+        }
+    }
+    .project-link{
+        position: absolute;
+        display: block;
+        top: 15px;
+        left: 15px;
+        .link-icon{
+            height: 40px;
+            width: 40px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-image: url(../images/link.png);
+            // background-image: url(https://cdn.freebiesupply.com/logos/large/2x/odoo-logo-png-transparent.png);
+        }
+    }
+}
+
+
+@import 'enStyle';
+
+@import 'responsive';
