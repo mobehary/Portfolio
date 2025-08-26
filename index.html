@@ -39,8 +39,15 @@
       width: 70%;
       border-right: 2px dashed #D0D0D0;
     }
+    p{
+      margin-bottom: 0px;
+    }
     .right-side{
       width: 30%;
+    }
+    #modal-project-image{
+      height: 200px;
+      object-fit: contain;
     }
     .circle-div{
       position: absolute;
@@ -73,6 +80,24 @@
     <div class="container">
       <div class="row" id="projects-container">
         
+      </div>
+    </div>
+    <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="projectModalLabel">Project Details</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="d-flex align-items-center justify-content-center py-5" id="image-bg">
+              <img id="modal-project-image" src="" alt="Project Image" class="img-fluid mb-3">
+            </div>
+            <p class="mb-2"><strong class="text-primary">Date:</strong> <span class="fw-normal ms-1" id="modal-project-date"></span></p>
+            <p class="mb-2"><strong class="text-primary">Brief:</strong> <span class="fw-normal ms-1" id="modal-project-description"></span></p>
+            <p class="mb-2"><strong class="text-primary">Tools:</strong> <span class="fw-normal ms-1" id="modal-project-tools"></span></p>
+          </div>
+        </div>
       </div>
     </div>
   </section>

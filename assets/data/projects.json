@@ -8,7 +8,7 @@
         "link": "https://www.alqemam.com/en/solutions/q%cc%88-event",
         "description": "An integrated platform for managing events between attendees and organizers (later converted to a software as a service)",
         "tools": "HTML5, CSS3, JavaScript, JQuery, Bootstrap 4, Gulp.js, Fontawesome and owl-carousel",
-        "date": "Nov 2020 - Jan 2021"
+        "startDate": "Nov 2020 - Jan 2021"
     },
     {
         "id": 2,
