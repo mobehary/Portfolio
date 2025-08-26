@@ -152,7 +152,7 @@
         "company": "#",
         "mainColor": "#532259",
         "companyLogo": "assets/images/company/freelance.png",
-        "link": "#",
+        "link": "https://hojuzaty.com/",
         "description": "An integrated platform for booking flights and tourism offers provided by the administration.",
         "tools": "HTML5, Sass, JavaScript, JQuery, Bootstrap 5, Nice-select, owl-carousel, Fancy box, Fontawesome, Tel-Input, Jquery-repeater and flat-picker",
         "startDate": "Oct 2024 - Nov 2024"
