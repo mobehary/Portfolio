@@ -42,6 +42,7 @@ fetch("assets/data/projects.json")
         // Fill modal content
         document.getElementById('image-bg').style.backgroundColor = project.mainColor || '#FFF';
         document.getElementById('modal-project-image').src = project.image;
+        document.getElementById('projectModalLabel').textContent = project.title || "Project Details";
         document.getElementById('modal-project-date').textContent = project.startDate || "N/A";
         document.getElementById('modal-project-description').textContent = project.description || "No description available.";
         document.getElementById('modal-project-tools').textContent = project.tools || "Tools is private";
