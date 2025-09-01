@@ -262,6 +262,18 @@
     },
     {
         "id": 24,
+        "title": "Aather",
+        "image": "assets/images/project/Aather.svg",
+        "company": "#",
+        "mainColor": "#19413F",
+        "companyLogo": "assets/images/company/freelance.png",
+        "link": "https://mobehary.github.io/Aather",
+        "description": "An introductory page for a charitable organization that collects surplus meals and food to give to those in need.",
+        "tools": "HTML5, CSS3, JavaScript, Bootstrap 5 and JQuery",
+        "startDate": "Aug 2025"
+    },
+    {
+        "id": 25,
         "title": "ORCHID",
         "image": "assets/images/project/orchid.svg",
         "company": "aait.sa",
