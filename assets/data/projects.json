@@ -274,6 +274,18 @@
     },
     {
         "id": 25,
+        "title": "Watid - وطيد",
+        "image": "assets/images/project/watid.svg",
+        "company": "aait.sa",
+        "mainColor": "#FFFFFF",
+        "companyLogo": "assets/images/company/aait.svg",
+        "link": "https://site.wtid-sa.com/",
+        "description": "An introductory page for Watid Foundation to connect clients with various engineering services to complete their projects.",
+        "tools": "HTML5, SASS, ES6, Tailwind CSS, Bootstrap 5, Nuxt-3, PrimeVue, I18n, Vue-3 carousel, Swiper.js and Pinia store",
+        "startDate": "OCT 2025"
+    },
+    {
+        "id": 26,
         "title": "ORCHID",
         "image": "assets/images/project/orchid.svg",
         "company": "aait.sa",
