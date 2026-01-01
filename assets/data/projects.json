@@ -290,9 +290,31 @@
         "image": "assets/images/project/orchid.svg",
         "company": "aait.sa",
         "companyLogo": "assets/images/company/aait.svg",
+        "link": "https://archorchid.sa/",
+        "description": "An interactive platform that allows clients to submit their engineering requests and projects to the company and request site visits to follow up on the implementation of their work.",
+        "tools": "HTML5, SASS, TypeScript, Tailwind CSS, Bootstrap 5, Nuxt-3, PrimeVue, Vee-validate, I18n, Lodash, Vue-3 Carousel, Pinia Store, Firebase and Socket.io",
+        "startDate": "Aug 2025 - Oct 2025"
+    },
+    {
+        "id": 27,
+        "title": "من السيرة الذاتية إلى الوظيفة بخطوة واحدة",
+        "image": "assets/images/project/cv.png",
+        "company": "aait.sa",
+        "companyLogo": "assets/images/company/aait.svg",
+        "link": "https://provider.jobbycv.com/Auth/Login?returnUrl=%2F",
+        "description": "A company control panel that allows registration by subscribing to a package and tracking job applications through added resume templates.",
+        "tools": "HTML5, SASS, JavaScript, JQuery, Bootstrap 5, Select2",
+        "startDate": "October 2025"
+    },
+    {
+        "id": 28,
+        "title": "Power & Speed",
+        "image": "assets/images/project/p&s.svg",
+        "company": "aait.sa",
+        "companyLogo": "assets/images/company/aait.svg",
         "link": "#",
-        "description": "",
-        "tools": "",
-        "startDate": "Aug 2025 - Present"
+        "description": "An e-commerce platform for selling motorcycle spare parts within the Kingdom of Saudi Arabia",
+        "tools": "HTML5, SASS, ES6, Nuxt-4, Tailwind CSS, Vee-validate, Firebase, Socket.io, Pinia, PrimeVue and Vue-3 Carousel",
+        "startDate": "Nov 2025 - Present"
     }
   ]
