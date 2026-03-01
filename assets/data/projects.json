@@ -312,7 +312,7 @@
         "image": "assets/images/project/p&s.svg",
         "company": "aait.sa",
         "companyLogo": "assets/images/company/aait.svg",
-        "link": "#",
+        "link": "https://power-and-speed.com/",
         "description": "An e-commerce platform for selling motorcycle spare parts within the Kingdom of Saudi Arabia",
         "tools": "HTML5, SASS, ES6, Nuxt-4, Tailwind CSS, Vee-validate, Firebase, Socket.io, Pinia, PrimeVue and Vue-3 Carousel",
         "startDate": "Nov 2025 - Present"
