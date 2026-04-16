@@ -52,3 +52,15 @@ fetch("assets/data/projects.json")
       });
     });
   });
+
+  document.querySelectorAll('.pf-pill').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.pf-pill').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      const cat = this.dataset.cat;
+      document.querySelectorAll('.project-card-wrapper').forEach(card => {
+        const show = cat === 'all' || card.dataset.category === cat;
+        card.style.display = show ? '' : 'none';
+      });
+    });
+  });

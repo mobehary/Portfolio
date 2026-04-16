@@ -64,6 +64,67 @@ body{
     }
 }
 
+.pf-pill {
+    border-radius: 999px !important;
+    border: 1px solid #D0D0D0;
+    background: #fff;
+    color: #666;
+    font-size: 14px;
+    padding: 8px 20px;
+    transition: all 0.2s;
+  
+    &.active, &:hover {
+      background: #533AB7 !important;
+      border-color: #533AB7 !important;
+      color: #fff !important;
+    }
+  }
+  
+  .projects {
+    .project-card {
+      // ... الكود الموجود +
+      cursor: pointer;
+  
+      &:hover {
+        border-color: #B0B0B0;
+        transform: translateY(-3px);
+        box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+      }
+  
+      .project-badge {
+        position: absolute;
+        top: 10px;
+        right: 50px;
+        font-size: 11px;
+        padding: 3px 10px;
+        border-radius: 999px;
+        font-weight: 600;
+  
+        &.badge-support { background: #E1F5EE; color: #085041; }
+        &.badge-dev     { background: #EEEDFE; color: #3C3489; }
+        &.badge-design  { background: #FAEEDA; color: #633806; }
+      }
+  
+      .project-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 12px;
+        padding-top: 12px;
+        border-top: 1px solid #F0F0F0;
+  
+        .project-date { font-size: 12px; color: #999; }
+        .project-tools {
+          display: flex; gap: 4px; flex-wrap: wrap;
+          .tool-tag {
+            font-size: 11px; padding: 2px 8px;
+            background: #F4F4F4; border-radius: 4px; color: #666;
+          }
+        }
+      }
+    }
+  }
+
 
 @import 'enStyle';
 

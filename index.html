@@ -71,13 +71,28 @@
 <body>
   <section>
     <div class="container">
-      <h4 class="text-center font-3xl fw-bold mb-3">Mohamed Elbehairy's Portfolio</h4>
+      <h4 class="text-center font-3xl fw-bold mb-3">Portfolio</h4>
       <h6 class="text-center font-sm fst-italic">Hint: Projects are arranged from newest to oldest.</h6>
     </div>
   </section>
 
   <section class="projects">
     <div class="container">
+      <div class="pf-tabs-wrapper mb-4">
+        <ul class="nav nav-pills justify-content-center gap-2" id="portfolio-tabs">
+          <li class="nav-item">
+            <button class="nav-link active pf-pill" data-cat="all">All</button>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link pf-pill" data-cat="development">Development</button>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link pf-pill" data-cat="support">
+              <i class="fa-solid fa-headset me-1"></i> Support
+            </button>
+          </li>
+        </ul>
+      </div>
       <div class="row" id="projects-container">
         
       </div>
