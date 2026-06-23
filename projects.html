@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio projects by Mohamed Elbehairy — Vue.js, Nuxt.js, and modern frontend work.">
+  <link rel="icon" type="image/x-icon" href="assets/images/favicon.svg">
+  <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/bootstrap.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/portfolio.css">
+  <title>Projects — Mohamed Elbehairy</title>
+</head>
+
+<body class="pf-body">
+
+  <div class="pf-bg-shapes" id="bgShapes"></div>
+
+  <!-- Navigation -->
+  <header class="pf-nav">
+    <div class="container">
+      <nav class="pf-nav-inner">
+        <a href="index.html" class="pf-brand">
+          <span class="pf-logo">M</span>
+          <span>Mohamed Elbehairy</span>
+        </a>
+        <ul class="pf-nav-links" id="navLinks">
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#skills">Skills</a></li>
+          <li><a href="index.html#experience">Experience</a></li>
+          <li><a href="index.html#education">Education</a></li>
+          <li><a href="projects.html" class="active">Projects</a></li>
+          <li><a href="assets/cv.pdf" target="_blank" class="pf-nav-cta"><i class="fa-solid fa-file-arrow-down"></i> Resume</a></li>
+        </ul>
+        <button class="pf-burger" id="burgerBtn" aria-label="Toggle menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="pf-section pf-projects-section">
+      <div class="container">
+
+        <div class="pf-section-head pf-reveal">
+          <span class="pf-kicker">Selected work</span>
+          <h2>My <span class="pf-grad-text">Projects</span></h2>
+          <p>A curated collection of products and platforms I've built — arranged from newest to oldest. Click any card to learn more.</p>
+        </div>
+
+        <div class="pf-filter-bar pf-reveal">
+          <button class="pf-filter active" data-cat="all">
+            <i class="fa-solid fa-grip me-1"></i> All
+            <span class="pf-filter-count" data-count="all"></span>
+          </button>
+          <button class="pf-filter" data-cat="development">
+            <i class="fa-solid fa-code me-1"></i> Projects I built
+          </button>
+          <button class="pf-filter" data-cat="support">
+            <i class="fa-solid fa-headset me-1"></i> Support projects
+          </button>
+        </div>
+
+        <div class="pf-projects-grid" id="projects-container"></div>
+
+      </div>
+
+      <!-- Project Modal -->
+      <div class="modal fade pf-modal" id="projectModal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="projectModalLabel">
+                <span class="pf-modal-company" id="modal-company-logo"></span>
+                <span id="modal-project-title">Project Details</span>
+              </h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="pf-modal-image-wrap" id="modal-image-wrap">
+                <img id="modal-project-image" src="" alt="Project image">
+              </div>
+              <div class="pf-modal-content">
+
+                <div class="pf-modal-row">
+                  <div class="pf-modal-row-icon"><i class="fa-regular fa-calendar"></i></div>
+                  <div class="pf-modal-row-content">
+                    <div class="pf-modal-label">Timeline</div>
+                    <div class="pf-modal-value" id="modal-project-date"></div>
+                  </div>
+                </div>
+
+                <div class="pf-modal-row">
+                  <div class="pf-modal-row-icon"><i class="fa-solid fa-circle-info"></i></div>
+                  <div class="pf-modal-row-content">
+                    <div class="pf-modal-label">Brief</div>
+                    <div class="pf-modal-value" id="modal-project-description"></div>
+                  </div>
+                </div>
+
+                <div class="pf-modal-row">
+                  <div class="pf-modal-row-icon"><i class="fa-solid fa-toolbox"></i></div>
+                  <div class="pf-modal-row-content">
+                    <div class="pf-modal-label">Tools & Stack</div>
+                    <div class="pf-modal-value">
+                      <div class="pf-modal-tools-wrap" id="modal-project-tools"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="pf-modal-row" id="modal-company-row">
+                  <div class="pf-modal-row-icon"><i class="fa-solid fa-building"></i></div>
+                  <div class="pf-modal-row-content">
+                    <div class="pf-modal-label">Company</div>
+                    <div class="pf-modal-value" id="modal-project-company"></div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="pf-modal-footer">
+              <button type="button" class="pf-btn pf-btn-ghost" data-bs-dismiss="modal">Close</button>
+              <a href="#" id="modal-project-link" target="_blank" rel="noopener" class="pf-btn pf-btn-primary">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Visit project
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer class="pf-footer">
+    <div class="container">
+      <div class="pf-socials">
+        <a href="mailto:mo.elbehairy7@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+        <a href="https://linkedin.com/in/mohamed-elbehairy-969a54203" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://github.com/mobehary" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+      </div>
+      <div>&copy; <span id="year"></span> Mohamed Elbehairy — Crafted with <i class="fa-solid fa-heart" style="color:#ef4444"></i> and Vue.js</div>
+    </div>
+  </footer>
+
+  <script src="assets/js/jquery.js"></script>
+  <script src="assets/bootstrap/bootstrap.js"></script>
+  <script src="assets/js/portfolio.js"></script>
+  <script src="assets/js/projects.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/x-icon" href="assets/images/favicon.svg">
+  <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/bootstrap.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/portfolio.css">
+  <link rel="stylesheet" href="assets/css/admin.css">
+  <title>Admin · Manage Projects</title>
+</head>
+
+<body class="pf-body admin-body">
+  <div class="pf-bg-shapes" id="bgShapes"></div>
+
+  <header class="pf-nav">
+    <div class="container">
+      <nav class="pf-nav-inner">
+        <a href="index.html" class="pf-brand">
+          <span class="pf-logo">M</span>
+          <span>Admin · Projects</span>
+        </a>
+        <ul class="pf-nav-links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="admin.html" class="active">Admin</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container admin-container">
+
+    <!-- Top toolbar -->
+    <div class="admin-toolbar">
+      <div>
+        <h1 class="admin-title">Projects Manager</h1>
+        <p class="admin-subtitle">Add, edit, reorder and delete your portfolio projects without touching code.</p>
+      </div>
+      <div class="admin-toolbar-actions">
+        <span class="admin-status" id="adminStatus"><i class="fa-solid fa-circle"></i> Loading…</span>
+        <button class="pf-btn pf-btn-ghost" id="btnReset" title="Re-load original projects.json">
+          <i class="fa-solid fa-rotate-left"></i> Reset
+        </button>
+        <button class="pf-btn pf-btn-ghost" id="btnImport">
+          <i class="fa-solid fa-upload"></i> Import
+        </button>
+        <input type="file" id="fileImport" accept="application/json" hidden>
+        <button class="pf-btn pf-btn-primary" id="btnSave">
+          <i class="fa-solid fa-floppy-disk"></i> Save to file
+        </button>
+        <button class="pf-btn pf-btn-ghost" id="btnDownload" title="Download as projects.json">
+          <i class="fa-solid fa-download"></i> Download
+        </button>
+      </div>
+    </div>
+
+    <!-- Banner / hint -->
+    <div class="admin-banner" id="adminBanner">
+      <i class="fa-solid fa-circle-info"></i>
+      <div>
+        <strong>How saving works.</strong>
+        Edits are auto-saved to your browser. Click <em>Save to file</em> to write directly to
+        <code>assets/data/projects.json</code> (Chrome / Edge), or <em>Download</em> to grab the file and replace it yourself.
+      </div>
+      <button class="admin-banner-close" id="bannerClose" aria-label="Dismiss"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <div class="admin-grid">
+
+      <!-- LEFT — Form -->
+      <section class="admin-card admin-form-card">
+        <header class="admin-card-head">
+          <h2 id="formTitle"><i class="fa-solid fa-plus"></i> Add new project</h2>
+          <button class="admin-icon-btn" id="btnNew" title="Clear form / new project">
+            <i class="fa-solid fa-file-circle-plus"></i>
+          </button>
+        </header>
+
+        <form id="projectForm" autocomplete="off" novalidate>
+          <input type="hidden" id="fId">
+
+          <div class="form-row">
+            <label for="fTitle">Project title <span class="req">*</span></label>
+            <input type="text" id="fTitle" required placeholder="e.g., Power & Speed">
+          </div>
+
+          <div class="form-row">
+            <label for="fDescription">Description <span class="req">*</span></label>
+            <textarea id="fDescription" rows="3" required placeholder="What does this project do?"></textarea>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-row">
+              <label for="fStartDate">Date / Timeline <span class="req">*</span></label>
+              <input type="text" id="fStartDate" required placeholder="e.g., Nov 2025 - Present">
+            </div>
+            <div class="form-row">
+              <label for="fCategory">Category <span class="req">*</span></label>
+              <select id="fCategory" required>
+                <option value="development">Project I built</option>
+                <option value="support">Support project</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <label for="fMainColor">Main color</label>
+            <div class="color-row">
+              <input type="color" id="fMainColorPicker" value="#ffffff">
+              <input type="text" id="fMainColor" placeholder="#FFFFFF or leave empty">
+              <button type="button" class="admin-icon-btn" id="btnClearColor" title="Clear color"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <label for="fLink">Project URL</label>
+            <input type="url" id="fLink" placeholder="https://example.com">
+          </div>
+
+          <div class="form-row">
+            <label for="fTools">Tools / Stack <span class="req">*</span></label>
+            <textarea id="fTools" rows="2" required placeholder="HTML5, CSS3, Vue.js, Nuxt 3, Tailwind CSS, ..."></textarea>
+            <small class="hint">Comma-separated. Will be rendered as tags in the modal.</small>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-row">
+              <label for="fCompany">Company domain</label>
+              <input type="text" id="fCompany" placeholder="aait.sa  ·  use # for freelance">
+            </div>
+            <div class="form-row">
+              <label for="fCompanyLogo">Company logo</label>
+              <select id="fCompanyLogo">
+                <option value="">— select —</option>
+                <option value="assets/images/company/aait.svg">AAIT</option>
+                <option value="assets/images/company/bb4it.webp">BB4IT</option>
+                <option value="assets/images/company/codeClouders.webp">Code Clouders</option>
+                <option value="assets/images/company/cs.png">Creative System</option>
+                <option value="assets/images/company/freelance.png">Freelance</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <label for="fImage">Project image <span class="req">*</span></label>
+            <div class="image-picker">
+              <input type="text" id="fImage" required placeholder="assets/images/project/my-project.png">
+              <label class="pf-btn pf-btn-ghost upload-btn" for="fImageFile">
+                <i class="fa-solid fa-image"></i> Pick file
+              </label>
+              <input type="file" id="fImageFile" accept="image/*" hidden>
+            </div>
+            <small class="hint">
+              Picking a file fills the expected path. <strong>Drop the actual file into</strong>
+              <code>assets/images/project/</code> manually.
+            </small>
+            <div class="image-preview" id="imagePreview" style="display:none;">
+              <img id="imagePreviewImg" alt="Preview">
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="button" class="pf-btn pf-btn-ghost" id="btnCancel">Cancel</button>
+            <button type="submit" class="pf-btn pf-btn-primary" id="btnSubmit">
+              <i class="fa-solid fa-check"></i> <span id="submitText">Add project</span>
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <!-- RIGHT — Projects List -->
+      <section class="admin-card admin-list-card">
+        <header class="admin-card-head">
+          <h2><i class="fa-solid fa-list"></i> Projects <span class="admin-count" id="projectsCount">0</span></h2>
+          <div class="admin-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="searchInput" placeholder="Search by title, tools, company…">
+          </div>
+        </header>
+
+        <div class="admin-list" id="projectsList">
+          <div class="admin-empty"><i class="fa-regular fa-folder-open"></i> No projects yet.</div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Confirm delete modal -->
+    <div class="modal fade pf-modal" id="confirmDeleteModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content" style="max-width:480px;">
+          <div class="modal-header">
+            <h5 class="modal-title"><i class="fa-solid fa-triangle-exclamation me-2" style="color:#f59e0b;"></i> Confirm delete</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="pf-modal-content">
+              <p>You're about to delete <strong id="deleteName">this project</strong>. This change is saved locally — you can undo by clicking <em>Reset</em>.</p>
+            </div>
+          </div>
+          <div class="pf-modal-footer">
+            <button type="button" class="pf-btn pf-btn-ghost" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="pf-btn" id="confirmDeleteBtn" style="background:#ef4444; color:#fff;">
+              <i class="fa-solid fa-trash"></i> Delete
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toast -->
+    <div class="admin-toast" id="adminToast"></div>
+
+  </main>
+
+  <footer class="pf-footer">
+    <div class="container">
+      <div>Admin panel · auto-saved locally · &copy; <span id="year"></span> Mohamed Elbehairy</div>
+    </div>
+  </footer>
+
+  <script src="assets/js/jquery.js"></script>
+  <script src="assets/bootstrap/bootstrap.js"></script>
+  <script src="assets/js/portfolio.js"></script>
+  <script src="assets/js/admin.js"></script>
+</body>
+
+</html>

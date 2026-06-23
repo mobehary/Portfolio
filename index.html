@@ -4,127 +4,405 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mohamed Elbehairy — Senior Front-end Developer (Vue.js | Nuxt.js). 5+ years building modern, performant web applications.">
+  <meta name="author" content="Mohamed Elbehairy">
   <link rel="icon" type="image/x-icon" href="assets/images/favicon.svg">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="assets/bootstrap/bootstrap.css">
-  <link rel="stylesheet" href="assets/css/nice-select.css">
-  <link rel="stylesheet" href="assets/css/select2.css">
-  <link rel="stylesheet" href="assets/css/owl.carousel.css">
-  <link rel="stylesheet" href="assets/css/fancybox.css">
-  <link rel="stylesheet" href="assets/css/owl.theme.default.css">
   <link rel="stylesheet" href="assets/css/style.css">
-  <title>Mohamed Elbehairy's Portfolio</title>
-  <style>
-    .outer-ticket{
-      background-color: #F9F9F9;
-      padding: 40px;
-    }
-    .inner-ticket{
-      border-radius: 5px;
-      height: 300px;
-      overflow: hidden;
-      background-color: #FFFFFF;
-    }
-    .ticket-cover{
-      border: 1px solid #D0D0D0;
-      display: flex;
-      align-items: stretch;
-      height: 100%;
-      width: 100%;
-      border-radius: 5px;
-    }
-    .left-side{
-      width: 70%;
-      border-right: 2px dashed #D0D0D0;
-    }
-    p{
-      margin-bottom: 0px;
-    }
-    .right-side{
-      width: 30%;
-    }
-    #modal-project-image{
-      height: 200px;
-      object-fit: contain;
-    }
-    .circle-div{
-      position: absolute;
-      left: -25px;
-      border: 1px solid #D0D0D0;
-      background-color: #F9F9F9;
-      z-index: 999999;
-      height: 50px;
-      width: 50px;
-      border-radius: 50%;
-    }
-    .ceil-circle{
-      top: -25px;
-    }
-    .floor-circle{
-      bottom: -25px;
-    }
-  </style>
+  <link rel="stylesheet" href="assets/css/portfolio.css">
+  <title>Mohamed Elbehairy — Senior Front-end Developer</title>
 </head>
 
-<body>
-  <section>
-    <div class="container">
-      <h4 class="text-center font-3xl fw-bold mb-3">Portfolio</h4>
-      <h6 class="text-center font-sm fst-italic">Hint: Projects are arranged from newest to oldest.</h6>
-    </div>
-  </section>
+<body class="pf-body">
 
-  <section class="projects">
+  <!-- Background particles -->
+  <div class="pf-bg-shapes" id="bgShapes"></div>
+
+  <!-- Navigation -->
+  <header class="pf-nav">
     <div class="container">
-      <div class="pf-tabs-wrapper mb-4">
-        <ul class="nav nav-pills justify-content-center gap-2" id="portfolio-tabs">
-          <li class="nav-item">
-            <button class="nav-link active pf-pill" data-cat="all">All</button>
-          </li>
-          <li class="nav-item">
-            <button class="nav-link pf-pill" data-cat="development">Development</button>
-          </li>
-          <li class="nav-item">
-            <button class="nav-link pf-pill" data-cat="support">
-              <i class="fa-solid fa-headset me-1"></i> Support
-            </button>
-          </li>
+      <nav class="pf-nav-inner">
+        <a href="index.html" class="pf-brand">
+          <span class="pf-logo">M</span>
+          <span>Mohamed Elbehairy</span>
+        </a>
+        <ul class="pf-nav-links" id="navLinks">
+          <li><a href="#about" class="active">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="assets/cv.pdf" target="_blank" class="pf-nav-cta"><i class="fa-solid fa-file-arrow-down"></i> Resume</a></li>
         </ul>
-      </div>
-      <div class="row" id="projects-container">
-        
-      </div>
+        <button class="pf-burger" id="burgerBtn" aria-label="Toggle menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </nav>
     </div>
-    <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="projectModalLabel"></h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <div class="d-flex align-items-center justify-content-center py-5" id="image-bg">
-              <img id="modal-project-image" src="" alt="Project Image" class="img-fluid mb-3">
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="pf-hero" id="about">
+      <div class="container">
+        <div class="pf-hero-grid">
+          <div class="pf-hero-text pf-reveal">
+            <span class="pf-eyebrow"><span class="pf-dot"></span> Available for new opportunities</span>
+            <h1>Hi, I'm <span class="pf-grad-text">Mohamed</span><br>Senior Front-end Developer</h1>
+            <p class="pf-role">Vue.js • Nuxt.js • TypeScript • Tailwind CSS</p>
+            <p class="pf-bio">
+              Front-end engineer with 5+ years crafting modern, high-performance Single Page Applications.
+              I specialize in the Vue.js ecosystem and use modern AI tooling to deliver clean, scalable interfaces — fast.
+            </p>
+            <div class="pf-hero-actions">
+              <a href="assets/cv.pdf" target="_blank" rel="noopener" class="pf-btn pf-btn-primary">
+                <i class="fa-solid fa-eye"></i> View CV
+              </a>
+              <a href="assets/cv.pdf" download="Mohamed-Elbehairy-CV.pdf" class="pf-btn pf-btn-ghost">
+                <i class="fa-solid fa-download"></i> Download CV
+              </a>
+              <a href="projects.html" class="pf-btn pf-btn-ghost">
+                <i class="fa-solid fa-briefcase"></i> View Projects
+              </a>
             </div>
-            <p class="mb-2"><strong class="text-primary">Date:</strong> <span class="fw-normal ms-1" id="modal-project-date"></span></p>
-            <p class="mb-2"><strong class="text-primary">Brief:</strong> <span class="fw-normal ms-1" id="modal-project-description"></span></p>
-            <p class="mb-2"><strong class="text-primary">Tools:</strong> <span class="fw-normal ms-1" id="modal-project-tools"></span></p>
+          </div>
+
+          <div class="pf-avatar-wrap pf-reveal">
+            <div class="pf-avatar">M</div>
+            <span class="pf-avatar-chip chip-1"><i class="fa-brands fa-vuejs"></i> Vue.js</span>
+            <span class="pf-avatar-chip chip-2"><i class="fa-solid fa-bolt"></i> Nuxt 3 / 4</span>
+            <span class="pf-avatar-chip chip-3"><i class="fa-solid fa-code"></i> TypeScript</span>
+          </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="pf-stats pf-reveal">
+          <div class="pf-stat"><div class="pf-stat-num">5+</div><div class="pf-stat-label">Years of experience</div></div>
+          <div class="pf-stat"><div class="pf-stat-num">28+</div><div class="pf-stat-label">Projects delivered</div></div>
+          <div class="pf-stat"><div class="pf-stat-num">4</div><div class="pf-stat-label">Companies</div></div>
+          <div class="pf-stat"><div class="pf-stat-num">∞</div><div class="pf-stat-label">Cups of coffee</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="pf-section">
+      <div class="container">
+        <div class="pf-section-head pf-reveal">
+          <span class="pf-kicker">About me</span>
+          <h2>Building <span class="pf-grad-text">delightful</span> web experiences</h2>
+          <p>A bit about who I am, what I do, and how to reach me.</p>
+        </div>
+
+        <div class="pf-about-grid">
+          <div class="pf-card pf-reveal">
+            <div class="pf-card-icon"><i class="fa-solid fa-user-astronaut"></i></div>
+            <h4>Who I am</h4>
+            <p>
+              I'm a Senior Front-end Developer based in Cairo, Egypt. For the past 5+ years I've been
+              crafting Single Page Applications using Vue.js and Nuxt.js — from e-commerce dashboards
+              and ERPs to multilingual SaaS platforms. I integrate modern AI tooling (Claude, Cursor,
+              Copilot) to ship faster without compromising quality. My next goal: leveling up to Full-Stack.
+            </p>
+          </div>
+
+          <div class="pf-card pf-reveal">
+            <div class="pf-card-icon"><i class="fa-solid fa-id-badge"></i></div>
+            <h4>Quick info</h4>
+            <ul class="pf-info-list">
+              <li>
+                <div class="pf-info-icon"><i class="fa-solid fa-envelope"></i></div>
+                <div>
+                  <span class="pf-info-label">Email</span>
+                  <a href="mailto:mo.elbehairy7@gmail.com" class="pf-info-val">mo.elbehairy7@gmail.com</a>
+                </div>
+              </li>
+              <li>
+                <div class="pf-info-icon"><i class="fa-solid fa-phone"></i></div>
+                <div>
+                  <span class="pf-info-label">Phone</span>
+                  <a href="tel:+201284560455" class="pf-info-val">+20 128 456 0455</a>
+                </div>
+              </li>
+              <li>
+                <div class="pf-info-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <div>
+                  <span class="pf-info-label">Location</span>
+                  <span class="pf-info-val">Cairo, Egypt</span>
+                </div>
+              </li>
+              <li>
+                <div class="pf-info-icon"><i class="fa-brands fa-linkedin"></i></div>
+                <div>
+                  <span class="pf-info-label">LinkedIn</span>
+                  <a href="https://linkedin.com/in/mohamed-elbehairy-969a54203" target="_blank" rel="noopener" class="pf-info-val">/in/mohamed-elbehairy</a>
+                </div>
+              </li>
+              <li>
+                <div class="pf-info-icon"><i class="fa-brands fa-github"></i></div>
+                <div>
+                  <span class="pf-info-label">GitHub</span>
+                  <a href="https://github.com/mobehary" target="_blank" rel="noopener" class="pf-info-val">github.com/mobehary</a>
+                </div>
+              </li>
+              <li>
+                <div class="pf-info-icon"><i class="fa-solid fa-language"></i></div>
+                <div>
+                  <span class="pf-info-label">Languages</span>
+                  <span class="pf-info-val">Arabic (Native) · English (Very Good)</span>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
+    <!-- SKILLS -->
+    <section class="pf-section" id="skills">
+      <div class="container">
+        <div class="pf-section-head pf-reveal">
+          <span class="pf-kicker">Tech stack</span>
+          <h2>Skills & <span class="pf-grad-text">Tooling</span></h2>
+          <p>The technologies I reach for to design, build, and ship modern web apps.</p>
+        </div>
+
+        <div class="pf-skills-grid">
+          <div class="pf-skill-group pf-reveal">
+            <h5><i class="fa-solid fa-code me-2"></i> Languages</h5>
+            <div class="pf-skill-tags">
+              <span class="pf-tag">HTML5</span>
+              <span class="pf-tag">CSS3</span>
+              <span class="pf-tag">SASS</span>
+              <span class="pf-tag">JavaScript</span>
+              <span class="pf-tag">TypeScript</span>
+              <span class="pf-tag">ES6+</span>
+            </div>
+          </div>
+
+          <div class="pf-skill-group pf-reveal">
+            <h5><i class="fa-brands fa-vuejs me-2"></i> Frameworks</h5>
+            <div class="pf-skill-tags">
+              <span class="pf-tag">Vue.js</span>
+              <span class="pf-tag">Nuxt.js 3 / 4</span>
+              <span class="pf-tag">React.js</span>
+              <span class="pf-tag">Next.js</span>
+              <span class="pf-tag">jQuery</span>
+            </div>
+          </div>
+
+          <div class="pf-skill-group pf-reveal">
+            <h5><i class="fa-solid fa-palette me-2"></i> UI Libraries</h5>
+            <div class="pf-skill-tags">
+              <span class="pf-tag">Tailwind CSS</span>
+              <span class="pf-tag">Bootstrap 5</span>
+              <span class="pf-tag">PrimeVue</span>
+              <span class="pf-tag">PrimeReact</span>
+              <span class="pf-tag">Nuxt UI</span>
+              <span class="pf-tag">Vuetify</span>
+              <span class="pf-tag">Flowbite</span>
+            </div>
+          </div>
+
+          <div class="pf-skill-group pf-reveal">
+            <h5><i class="fa-solid fa-database me-2"></i> State & Data</h5>
+            <div class="pf-skill-tags">
+              <span class="pf-tag">Pinia</span>
+              <span class="pf-tag">Vuex</span>
+              <span class="pf-tag">Zustand</span>
+              <span class="pf-tag">Firebase</span>
+              <span class="pf-tag">Socket.io</span>
+              <span class="pf-tag">Postman</span>
+            </div>
+          </div>
+
+          <div class="pf-skill-group pf-reveal">
+            <h5><i class="fa-solid fa-toolbox me-2"></i> Tools & DevOps</h5>
+            <div class="pf-skill-tags">
+              <span class="pf-tag">Git</span>
+              <span class="pf-tag">NPM</span>
+              <span class="pf-tag">Figma</span>
+              <span class="pf-tag">Adobe XD</span>
+              <span class="pf-tag">Trello</span>
+              <span class="pf-tag">Jira</span>
+            </div>
+          </div>
+
+          <div class="pf-skill-group pf-reveal">
+            <h5><i class="fa-solid fa-chart-line me-2"></i> Extras</h5>
+            <div class="pf-skill-tags">
+              <span class="pf-tag">ECharts</span>
+              <span class="pf-tag">Google Maps</span>
+              <span class="pf-tag">I18n</span>
+              <span class="pf-tag">SEO</span>
+              <span class="pf-tag">Responsive Design</span>
+              <span class="pf-tag">OOP</span>
+              <span class="pf-tag">Agile</span>
+              <span class="pf-tag">October CMS</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="pf-section" id="experience">
+      <div class="container">
+        <div class="pf-section-head pf-reveal">
+          <span class="pf-kicker">Career path</span>
+          <h2>Professional <span class="pf-grad-text">Experience</span></h2>
+          <p>5+ years across product, agency, and freelance work — Vue.js, Nuxt.js, and the modern frontend.</p>
+        </div>
+
+        <div class="pf-timeline">
+          <div class="pf-tl-item current pf-reveal">
+            <div class="pf-tl-card">
+              <div class="pf-tl-head">
+                <h4>Creative System</h4>
+                <span class="pf-tl-date">Feb 2026 — Present</span>
+              </div>
+              <div class="pf-tl-role">Front-End Technical Support Head</div>
+              <ul class="pf-tl-list">
+                <li>Delivering projects with Vibe Coding methodologies using AI-assisted tools (Claude Code, Cursor).</li>
+                <li>Solving issues, developing features, and reviewing live projects.</li>
+                <li>Evaluating front-end executive team performance.</li>
+                <li>Integrating payment gateways: Moyassar, PayPal, MyFatoorah, Tabby, Tamara.</li>
+                <li>Designing Dashboards, Websites and Mobile Applications using Figma Make AI.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="pf-tl-item pf-reveal">
+            <div class="pf-tl-card">
+              <div class="pf-tl-head">
+                <h4>AAIT — Awamer Al-Shabaka for IT</h4>
+                <span class="pf-tl-date">Oct 2024 — Feb 2026</span>
+              </div>
+              <div class="pf-tl-role">Senior Front-End Developer (Vue.js · Nuxt.js)</div>
+              <ul class="pf-tl-list">
+                <li>Built SPAs with Nuxt 3 / 4 and Vue.js 3 using PrimeVue, Nuxt UI, and Vuetify.</li>
+                <li>Developed multilingual dashboards for stores and service providers with I18n.</li>
+                <li>Integrated APIs, Google Maps, Firebase, Socket.io and robust error handling.</li>
+                <li>Revamped legacy Ajax/jQuery apps to Vue.js and Nuxt.js.</li>
+                <li>Leveraged ChatGPT Plus, Cursor AI, Copilot, DeepSeek, Claude, and Gemini for productivity.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="pf-tl-item pf-reveal">
+            <div class="pf-tl-card">
+              <div class="pf-tl-head">
+                <h4>BB4IT — Business Building for IT</h4>
+                <span class="pf-tl-date">Apr 2023 — Sep 2024</span>
+              </div>
+              <div class="pf-tl-role">Mid-Level Front-End Developer (Vue.js)</div>
+              <ul class="pf-tl-list">
+                <li>Designed and developed user interfaces with modern tools.</li>
+                <li>Built and maintained SPAs with Vue.js and Vuetify.</li>
+                <li>Improved SEO across multiple legacy projects, measured via Google PageSpeed.</li>
+                <li>Modernized older designs and stacks with new tooling.</li>
+                <li>Collaborated through Figma, Trello, Slack, and Bitbucket.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="pf-tl-item pf-reveal">
+            <div class="pf-tl-card">
+              <div class="pf-tl-head">
+                <h4>Code Clouders</h4>
+                <span class="pf-tl-date">Nov 2020 — Mar 2023</span>
+              </div>
+              <div class="pf-tl-role">Front-End & WordPress Developer</div>
+              <ul class="pf-tl-list">
+                <li>Translated Adobe XD designs into pixel-perfect interfaces.</li>
+                <li>Built WordPress (Elementor) and large-scale October CMS products.</li>
+                <li>Developed multi-theme, multi-user interfaces for shared backends.</li>
+                <li>Used Git (GitHub, GitLab, Bitbucket) and Jira for collaboration.</li>
+                <li>Worked as an outsourcer for q-tech (Alqemam) software company.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="pf-section" id="education">
+      <div class="container">
+        <div class="pf-section-head pf-reveal">
+          <span class="pf-kicker">Background</span>
+          <h2>Education & <span class="pf-grad-text">Certificates</span></h2>
+        </div>
+
+        <div class="pf-edu-grid">
+          <div class="pf-edu-card pf-reveal">
+            <div class="pf-edu-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div>
+              <h4>Bachelor's Degree — Information Systems</h4>
+              <div class="pf-edu-org">Faculty of Computers & Information, Mansoura University</div>
+              <div class="pf-edu-meta"><i class="fa-regular fa-calendar me-1"></i> 2015 — 2019 · Mansoura, Egypt</div>
+            </div>
+          </div>
+
+          <div class="pf-edu-card pf-reveal">
+            <div class="pf-edu-icon"><i class="fa-solid fa-certificate"></i></div>
+            <div>
+              <h4>Web Master Diploma</h4>
+              <div class="pf-edu-org">IT Share — Full-Stack Web Development</div>
+              <div class="pf-edu-meta"><i class="fa-regular fa-calendar me-1"></i> Dec 2019 — Jun 2020</div>
+            </div>
+          </div>
+
+          <div class="pf-edu-card pf-reveal">
+            <div class="pf-edu-icon"><i class="fa-solid fa-users-gear"></i></div>
+            <div>
+              <h4>Employment Skills Track</h4>
+              <div class="pf-edu-org">Aspire Training Solutions (sponsored by AUC)</div>
+              <div class="pf-edu-meta"><i class="fa-regular fa-calendar me-1"></i> Nov 2018 · Mansoura, Egypt</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="pf-section" style="padding-top:0;">
+      <div class="container">
+        <div class="pf-cta pf-reveal">
+          <h3>Let's build something <span class="pf-grad-text">together</span></h3>
+          <p>Got a project in mind? Looking for a senior front-end on your team? I'd love to hear about it.</p>
+          <div class="pf-cta-actions">
+            <a href="mailto:mo.elbehairy7@gmail.com" class="pf-btn pf-btn-primary">
+              <i class="fa-solid fa-paper-plane"></i> Get in touch
+            </a>
+            <a href="assets/cv.pdf" download="Mohamed-Elbehairy-CV.pdf" class="pf-btn pf-btn-ghost">
+              <i class="fa-solid fa-download"></i> Download CV
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="pf-footer">
+    <div class="container">
+      <div class="pf-socials">
+        <a href="mailto:mo.elbehairy7@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+        <a href="https://linkedin.com/in/mohamed-elbehairy-969a54203" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://github.com/mobehary" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="tel:+201284560455" aria-label="Phone"><i class="fa-solid fa-phone"></i></a>
+      </div>
+      <div>&copy; <span id="year"></span> Mohamed Elbehairy — Crafted with <i class="fa-solid fa-heart" style="color:#ef4444"></i> and Vue.js · <a href="admin.html" style="color:var(--pf-muted); opacity:0.5;" title="Admin">·</a></div>
+    </div>
+  </footer>
 
   <script src="assets/js/jquery.js"></script>
   <script src="assets/bootstrap/bootstrap.js"></script>
-  <script src="assets/js/jquery.nice-select.min.js"></script>
-  <script src="assets/js/select2.js"></script>
-  <script src="assets/js/fancybox.js"></script>
-  <script src="assets/js/owl.carousel.js"></script>
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/portfolio.js"></script>
 </body>
 
 </html>
